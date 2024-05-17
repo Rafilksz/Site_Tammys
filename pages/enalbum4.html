@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Album 4</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="/assets/scripts/script.js" defer></script>
 </head>
-
 <body>
   <header>
     <img src="/assets/img/cabecario.png" alt="cabecalho">
@@ -34,30 +31,38 @@
   </div>
 
   <main>
-    <div class="contact-container">
-      <h1>Tais Maiara Dasilva Trincada</h1>
-      <p>Mail | testeemail@gmail.com</p>
-      <p>Phone | +55 19 12345-1234</p>
-      <p>LinkedIn | <a href="https://www.linkedin.com" target="_blank">www.linkedin.com</a></p>
-      <div class="contact-form">
-        <input type="text" id="name" placeholder="Name *" required>
-        <input type="email" id="email" placeholder="Mail *" required>
-        <textarea id="message" placeholder="Type your message here... *" required></textarea>
-        <button type="button" onclick="sendEmail()">Send</button>
+    <div class="images-main-container">
+      <h1>Album 4</h1>
+      <div class="image-row1">
+        <img src="/assets/img/album_1.png" alt="Album 1" onclick="openLightbox(0)">
+        <img src="/assets/img/album_2.png" alt="Album 2" onclick="openLightbox(1)">
+        <img src="/assets/img/album_3.png" alt="Album 3" onclick="openLightbox(2)">
       </div>
+      <div class="image-row1">
+        <img src="/assets/img/album_4.png" alt="Album 4" onclick="openLightbox(3)">
+        <img src="/assets/img/album_5.png" alt="Album 5" onclick="openLightbox(4)">
+        <img src="/assets/img/album_6.png" alt="Album 6" onclick="openLightbox(5)">
+      </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close" onclick="closeLightbox(event)">&times;</span>
+      <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+      <img id="lightbox-img" src="">
+      <span class="next" onclick="changeImage(1)">&#10095;</span>
     </div>
   </main>
 
   <footer style="background-image: url('/assets/img/rodape.png');">
     <div class="social-links">
       <a href="https://www.behance.com" target="_blank">
-        <img src="/assets/img/beha-nobg.png" alt="Behance">
+        <img src="/assets/img/beha-nobg.png" alt="Behance"> 
       </a>
       <a href="https://www.facebook.com" target="_blank">
-        <img src="/assets/img/face-nobg.png" alt="Facebook">
+        <img src="/assets/img/face-nobg.png" alt="Facebook"> 
       </a>
       <a href="https://www.instagram.com" target="_blank">
-        <img src="/assets/img/insta-nobg.png" alt="Instagram">
+        <img src="/assets/img/insta-nobg.png" alt="Instagram"> 
       </a>
       <a href="mailto:rafael.longas@gmail.com">
         <img src="/assets/img/mail-nobg.png" alt="Email">
@@ -65,5 +70,4 @@
     </div>
   </footer>
 </body>
-
 </html>

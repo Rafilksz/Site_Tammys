@@ -57,7 +57,19 @@ function changeLanguage(select) {
     "/pages/encontact.html": "/pages/brcontact.html",
     "/pages/brcontact.html": "/pages/encontact.html",
     "/pages/enabout.html": "/pages/brabout.html",
-    "/pages/brabout.html": "/pages/enabout.html"
+    "/pages/brabout.html": "/pages/enabout.html",
+    "/pages/enalbum1.html":"/pages/bralbum1.html",
+    "/pages/enalbum2.html":"/pages/bralbum2.html",
+    "/pages/enalbum3.html":"/pages/bralbum3.html",
+    "/pages/enalbum4.html":"/pages/bralbum4.html",
+    "/pages/enalbum5.html":"/pages/bralbum5.html",
+    "/pages/enalbum6.html":"/pages/bralbum6.html",
+    "/pages/bralbum1.html":"/pages/enalbum1.html",
+    "/pages/bralbum2.html":"/pages/enalbum2.html",
+    "/pages/bralbum3.html":"/pages/enalbum3.html",
+    "/pages/bralbum4.html":"/pages/enalbum4.html",
+    "/pages/bralbum5.html":"/pages/enalbum5.html",
+    "/pages/bralbum6.html":"/pages/enalbum6.html",
   };
 
   if (selectedOption === "pt-br" && paths[currentPath]) {
