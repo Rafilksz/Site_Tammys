@@ -38,7 +38,7 @@ header img {
 }
 
 footer {
-  background-image: url('/assets/img/rodape.png');
+  background-image: url('assets/img/rodape.png');
   background-size: cover;
   color: rgb(0, 0, 0);
   height: 100px;
