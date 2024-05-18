@@ -11,12 +11,14 @@ function openLightbox(index) {
   document.getElementById("lightbox-img").src = images[index];
   document.getElementById("lightbox").style.display = "flex";
   document.addEventListener("keydown", keyboardNavigation);
+  addTouchListeners();
 }
 
 function closeLightbox(event) {
   if (event.target === event.currentTarget || event.target.classList.contains('close')) {
     document.getElementById("lightbox").style.display = "none";
     document.removeEventListener("keydown", keyboardNavigation);
+    removeTouchListeners();
   }
 }
 
@@ -26,15 +28,64 @@ function changeImage(direction) {
 }
 
 function keyboardNavigation(event) {
-  if (event.key === "ArrowRight") {
+  if (event.key === "ArrowRight" || event.key === "ArrowDown") {
     changeImage(1);
-  } else if (event.key === "ArrowLeft") {
+  } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
     changeImage(-1);
   } else if (event.key === "Escape") {
     closeLightbox(event);
   }
 }
 
+function addTouchListeners() {
+  var lightbox = document.getElementById("lightbox");
+  lightbox.addEventListener("touchstart", handleTouchStart, false);
+  lightbox.addEventListener("touchmove", handleTouchMove, false);
+}
+
+function removeTouchListeners() {
+  var lightbox = document.getElementById("lightbox");
+  lightbox.removeEventListener("touchstart", handleTouchStart, false);
+  lightbox.removeEventListener("touchmove", handleTouchMove, false);
+}
+
+var xDown = null;
+var yDown = null;
+
+function handleTouchStart(evt) {
+  const firstTouch = evt.touches[0];
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = evt.touches[0].clientX;
+  var yUp = evt.touches[0].clientY;
+
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      changeImage(1);
+    } else {
+      changeImage(-1);
+    }
+  } else {
+    if (yDiff > 0) {
+      changeImage(1);
+    } else {
+      changeImage(-1);
+    }
+  }
+
+  xDown = null;
+  yDown = null;
+}
 
 // EmailJS initialization
 (function() {

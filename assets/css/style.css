@@ -162,11 +162,10 @@ main {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 250px; /* Limitando a altura das imagens */
-  background: white; /* Fundo branco */
+  max-height: 250px;
+  background: white;
 }
 
-/* Adicionando um wrapper ao redor das imagens para ajustar o corte */
 .album-row a img {
   display: block;
   max-width: 100%;
@@ -249,8 +248,8 @@ main {
 }
 
 .contact-form input, .contact-form textarea {
-  width: 100%;
-  max-width: 600px;
+  width: 80%;
+  max-width: 200px;
   padding: 10px;
   margin: 10px 0;
   border: 5px solid #9096b1;
@@ -296,6 +295,7 @@ main {
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
 }
 
 .image-row1 img:hover {
@@ -323,22 +323,12 @@ main {
 .lightbox .prev,
 .lightbox .next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
+  color: pink;
   font-size: 4rem;
   cursor: pointer;
 }
 
-.lightbox .prev {
-  left: 10px;
-}
-
-.lightbox .next {
-  right: 10px;
-}
-
-lightbox .close {
+.lightbox .close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -374,6 +364,7 @@ lightbox .close {
   font-size: 50px;
 }
 
+/* Media Queries */
 @media (max-width: 1200px) {
   .menu li {
     margin-left: 15px;
@@ -410,7 +401,7 @@ lightbox .close {
   }
 
   .contact-form input, .contact-form textarea {
-    width: 90%;
+    width: 50%;
   }
 
   .footer-content {
@@ -428,6 +419,26 @@ lightbox .close {
     order: 1;
     margin-bottom: 10px;
   }
+
+  .lightbox .prev,
+  .lightbox .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: pink;
+    font-size: 4rem;
+    cursor: pointer;
+  }
+
+  .lightbox .prev {
+    top: 10px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .lightbox .next {
+    bottom: 10px;
+    transform: translateX(-50%) rotate(-90deg);
+  }
 }
 
 @media (max-width: 480px) {
@@ -439,7 +450,7 @@ lightbox .close {
   .album-main-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+   	align-items: center;
     gap: 10px;
     padding: 20px;
   }
@@ -479,5 +490,97 @@ lightbox .close {
   .social-links {
     order: 1;
     margin-bottom: 10px;
+  }
+
+  /* Para a página Album 1 */
+  .images-main-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-row1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-row1 img {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 40px; /* Adiciona margem inferior para espaçamento */
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: pink;
+    font-size: 4rem;
+    cursor: pointer;
+  }
+
+  .lightbox .prev {
+    top: 10px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .lightbox .next {
+    bottom: 10px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+/* Media Query para computadores */
+@media (min-width: 769px) {
+  .contact-form input, .contact-form textarea {
+    max-width: 600px;
+    width: 600px; /* Define uma largura fixa de 600px */
+  }
+
+  .contact-form textarea {
+    height: 300px; /* Define a altura original */
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    top: 50%;
+    transform: translateY(-50%);
+    left: unset;
+  }
+
+  .lightbox .prev {
+    left: 10px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  .lightbox .next {
+    right: 10px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+/* Media Query para dispositivos móveis na página Sobre Mim */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-box, .right-box {
+    width: 90%;
+  }
+}
+
+/* Media Query para tablets */
+@media (min-width: 481px) and (max-width: 834px) {
+  .image-row1 img {
+    max-width: 200px; /* Reduz o tamanho das imagens para caber no tablet */
+    margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
+  }
+
+  .image-row1 {
+    gap: 5px; /* Reduz o espaçamento entre as imagens na linha */
+    margin-bottom: 10px; /* Reduz o espaçamento entre as linhas */
   }
 }
