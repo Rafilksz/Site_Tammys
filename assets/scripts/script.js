@@ -4,6 +4,9 @@ var images = [];
 document.addEventListener("DOMContentLoaded", function() {
   var imageElements = document.querySelectorAll('.images-main-container img');
   images = Array.from(imageElements).map(img => img.src);
+
+  var languageSelect = document.getElementById("language-select");
+  setLanguageOption(languageSelect);
 });
 
 function openLightbox(index) {
@@ -128,35 +131,33 @@ function changeLanguage(select) {
     "/pages/bralbum6.html":"/pages/enalbum6.html",
   };
 
-  if (selectedOption === "pt-br" && paths[currentPath]) {
-    window.location.href = paths[currentPath];
-  } else if (selectedOption === "en-us" && paths[currentPath]) {
+  if (paths[currentPath]) {
     window.location.href = paths[currentPath];
   }
 }
 
-function sendEmail() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
+function setLanguageOption(select) {
+  var currentPath = window.location.pathname;
 
-  var templateParams = {
-    from_name: name,
-    from_email: email,
-    message: message
-  };
-
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-    .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
-      alert('Mensagem enviada com sucesso!');
-    }, function(error) {
-      console.log('FAILED...', error);
-      alert('Ocorreu um erro ao enviar a mensagem.');
-    });
+  if (currentPath.includes('/br')) {
+    select.querySelector('option[value="pt-br"]').disabled = true;
+    select.querySelector('option[value="en-us"]').disabled = false;
+    select.value = "pt-br";
+  } else if (currentPath.includes('/en') || currentPath === '/index.html') {
+    select.querySelector('option[value="en-us"]').disabled = true;
+    select.querySelector('option[value="pt-br"]').disabled = false;
+    select.value = "en-us";
+  } else {
+    select.querySelector('option[value="en-us"]').disabled = false;
+    select.querySelector('option[value="pt-br"]').disabled = false;
+    select.value = "";
+  }
 }
 
 window.onload = function() {
   var languageSelect = document.getElementById("language-select");
-  changeLanguage(languageSelect);
+  setLanguageOption(languageSelect);
+  languageSelect.addEventListener("change", function() {
+    changeLanguage(languageSelect);
+  });
 };

@@ -527,7 +527,7 @@ main {
 
   .lightbox .next {
     bottom: 10px;
-    transform: translateX(-50%) rotate(90deg);
+    transform: translateX(-50%) rotate(-90deg);
   }
 }
 
@@ -558,6 +558,15 @@ main {
     right: 10px;
     transform: translateY(-50%) rotate(0deg);
   }
+
+  .album-row a {
+    flex: 0 0 33%; /* Aumenta a largura das imagens em 1.5x */
+    max-width: 33%;
+  }
+
+  .album-row img {
+    max-height: 375px; /* Aumenta a altura máxima das imagens em 1.5x */
+  }
 }
 
 /* Media Query para dispositivos móveis na página Sobre Mim */
@@ -574,6 +583,15 @@ main {
 
 /* Media Query para tablets */
 @media (min-width: 481px) and (max-width: 834px) {
+  .album-row a {
+    flex: 0 0 22%; /* Reverte o tamanho das imagens para tablets */
+    max-width: 22%;
+  }
+
+  .album-row img {
+    max-height: 250px; /* Reverte a altura máxima das imagens para tablets */
+  }
+
   .image-row1 img {
     max-width: 200px; /* Reduz o tamanho das imagens para caber no tablet */
     margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
