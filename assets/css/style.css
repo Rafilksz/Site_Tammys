@@ -30,8 +30,15 @@ header img {
   margin-bottom: 20px;
 }
 
+@media (min-width: 769px) {
+  .logo {
+    max-width: none;
+    width: auto;
+  }
+}
+
 footer {
-  background-image: url('assets/img/rodape.png');
+  background-image: url('/assets/img/rodape.png');
   background-size: cover;
   color: rgb(0, 0, 0);
   height: 100px;
@@ -140,16 +147,23 @@ main {
 
 .album-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10%;
+  gap: 10px; /* Ajustando o gap entre os itens */
   margin-bottom: 5%;
+}
+
+.album-row a {
+  flex: 0 0 22%; /* Ajusta a largura dos álbuns */
+  max-width: 22%; /* Garante que os álbuns não ultrapassem 22% da largura */
+  margin-bottom: 10px; /* Reduzindo a margem inferior */
 }
 
 .album-row img {
   width: 100%;
-  max-width: 350px;
   height: auto;
   object-fit: cover;
+  max-height: 300px; /* Limitando a altura das imagens */
 }
 
 .container {
@@ -313,7 +327,7 @@ main {
   left: 10px;
 }
 
-lightbox .next {
+.lightbox .next {
   right: 10px;
 }
 
