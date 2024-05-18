@@ -87,7 +87,7 @@ footer {
   font-size: 20px;
 }
 
-social-links img {
+.social-links img {
   width: 30px;
   height: 30px;
   margin-right: 8px;
@@ -202,7 +202,7 @@ main {
   color: #444c7c;
 }
 
-right-box p {
+.right-box p {
   color: #000000;
 }
 
@@ -227,16 +227,16 @@ right-box p {
   margin-bottom: 10px;
 }
 
-contact-container p {
+.contact-container p {
   margin: 5px 0;
 }
 
-contact-container a {
+.contact-container a {
   color: #0000EE;
   text-decoration: none;
 }
 
-contact-container a:hover {
+.contact-container a:hover {
   text-decoration: underline;
 }
 
@@ -527,12 +527,7 @@ contact-container a:hover {
 
   .lightbox .next {
     bottom: 10px;
-    transform: translateX(-50%) rotate(-90deg);
-  }
-
-  .lightbox .next {
-    bottom: 10px;
-    transform: translateX(-50%) rotate(90deg); /* Adiciona esta linha para girar a seta 180 graus */
+    transform: translateX(-50%) rotate(90deg);
   }
 }
 
