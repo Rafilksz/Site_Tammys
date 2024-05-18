@@ -13,6 +13,7 @@ header {
 
 header img {
   width: 100%;
+  height: auto;
 }
 
 .logo-container {
@@ -23,12 +24,15 @@ header img {
 }
 
 .logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   margin-bottom: 20px;
 }
 
 footer {
   background-image: url('assets/img/rodape.png');
-  background-size: 100% 100%;
+  background-size: cover;
   color: rgb(0, 0, 0);
   height: 100px;
   display: flex;
@@ -45,11 +49,27 @@ footer {
   position: relative;
 }
 
+.footer-credit {
+  font-size: 0.8em;
+  color: black;
+  font-weight: bold;
+}
+
+.footer-credit a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
 .social-links {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .social-links a {
@@ -64,22 +84,6 @@ footer {
   width: 30px;
   height: 30px;
   margin-right: 8px;
-}
-
-.footer-credit {
-  font-size: 0.8em;
-  color: black;
-  margin-right: 2%;
-  font-weight: bold;
-}
-
-.footer-credit a {
-  color: black;
-  text-decoration: none;
-}
-
-.footer-credit a:hover {
-  text-decoration: underline;
 }
 
 .menu {
@@ -142,10 +146,10 @@ main {
 }
 
 .album-row img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   object-fit: cover;
-  justify-content: space-between;
 }
 
 .container {
@@ -264,8 +268,9 @@ main {
 }
 
 .image-row1 img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.2s;
@@ -308,11 +313,11 @@ main {
   left: 10px;
 }
 
-.lightbox .next {
+lightbox .next {
   right: 10px;
 }
 
-.lightbox .close {
+lightbox .close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -356,27 +361,32 @@ main {
 
   .album-row img {
     width: 250px;
-    height: 250px;
+    height: auto;
   }
 }
 
 @media (max-width: 768px) {
   .menu {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .menu li {
-    margin: 10px 0;
+    margin: 10px;
   }
 
   .album-row {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .album-row a {
+    flex: 0 0 45%;
+    margin-bottom: 20px;
   }
 
   .album-row img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
   }
 
   .contact-form input, .contact-form textarea {
@@ -394,9 +404,14 @@ main {
 }
 
 @media (max-width: 480px) {
+  .album-row a {
+    flex: 0 0 45%;
+    margin-bottom: 10px;
+  }
+
   .album-row img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
   }
 
   .contact-form input, .contact-form textarea {
