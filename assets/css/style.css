@@ -41,7 +41,7 @@ footer {
   background-image: url('/assets/img/rodape.png');
   background-size: cover;
   color: rgb(0, 0, 0);
-  height: 100px;
+  height: 120px; /* Increased height to accommodate the text */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ footer {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Align content in a column */
   align-items: center;
   width: 100%;
   padding: 10px 20px;
@@ -60,6 +60,7 @@ footer {
   font-size: 0.8em;
   color: black;
   font-weight: bold;
+  margin-top: 10px; /* Add margin to separate from icons */
 }
 
 .footer-credit a {
@@ -73,10 +74,9 @@ footer {
 
 .social-links {
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 10px; /* Add margin to separate from text */
 }
 
 .social-links a {
@@ -163,6 +163,7 @@ main {
   height: auto;
   object-fit: cover;
   max-height: 300px; /* Limitando a altura das imagens */
+  border-style: dashed;
 }
 
 .container {
@@ -413,8 +414,13 @@ lightbox .close {
   .footer-credit {
     margin-top: 10px;
     margin-right: 0;
-    position: absolute;
-    bottom: 10px;
+    position: static;
+    order: 2; /* Move para baixo dos ícones sociais */
+  }
+
+  .social-links {
+    order: 1; /* Move os ícones sociais para cima */
+    margin-bottom: 10px;
   }
 }
 
@@ -461,9 +467,11 @@ lightbox .close {
     margin-top: 10px;
     margin-right: 0;
     position: static;
+    order: 2; /* Move para baixo dos ícones sociais */
   }
 
   .social-links {
+    order: 1; /* Move os ícones sociais para cima */
     margin-bottom: 10px;
   }
 }
