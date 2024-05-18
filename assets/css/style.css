@@ -414,6 +414,8 @@ lightbox .close {
   .footer-credit {
     margin-top: 10px;
     margin-right: 0;
+    position: absolute;
+    bottom: 10px;
   }
 }
 
@@ -430,5 +432,11 @@ lightbox .close {
 
   .contact-form input, .contact-form textarea {
     width: 100%;
+  }
+
+  .footer-credit {
+    margin-top: 10px;
+    margin-right: 0;
+    position: static;
   }
 }
