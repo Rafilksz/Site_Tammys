@@ -41,7 +41,7 @@ footer {
   background-image: url('/assets/img/rodape.png');
   background-size: cover;
   color: rgb(0, 0, 0);
-  height: 120px; /* Increased height to accommodate the text */
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ footer {
 
 .footer-content {
   display: flex;
-  flex-direction: column; /* Align content in a column */
+  flex-direction: column;
   align-items: center;
   width: 100%;
   padding: 10px 20px;
@@ -60,7 +60,7 @@ footer {
   font-size: 0.8em;
   color: black;
   font-weight: bold;
-  margin-top: 10px; /* Add margin to separate from icons */
+  margin-top: 10px;
 }
 
 .footer-credit a {
@@ -76,7 +76,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px; /* Add margin to separate from text */
+  margin-bottom: 10px;
 }
 
 .social-links a {
@@ -148,22 +148,31 @@ main {
 .album-row {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Ajustando o gap entre os itens */
+  gap: 10px;
   margin-bottom: 5%;
 }
 
 .album-row a {
-  flex: 0 0 22%; /* Ajusta a largura dos álbuns */
-  max-width: 22%; /* Garante que os álbuns não ultrapassem 22% da largura */
-  margin-bottom: 10px; /* Reduzindo a margem inferior */
+  flex: 0 0 22%;
+  max-width: 22%;
+  margin-bottom: 10px;
 }
 
 .album-row img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 300px; /* Limitando a altura das imagens */
-  border-style: dashed;
+  max-height: 250px; /* Limitando a altura das imagens */
+  background: white; /* Fundo branco */
+}
+
+/* Adicionando um wrapper ao redor das imagens para ajustar o corte */
+.album-row a img {
+  display: block;
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: white;
 }
 
 .container {
@@ -265,7 +274,6 @@ main {
   background-color: #333;
 }
 
-/* Galeria de imagens */
 .images-main-container {
   display: flex;
   flex-direction: column;
@@ -294,7 +302,6 @@ main {
   transform: scale(1.05);
 }
 
-/* Lightbox CSS */
 .lightbox {
   display: none;
   position: fixed;
@@ -367,7 +374,6 @@ lightbox .close {
   font-size: 50px;
 }
 
-/* Media Queries */
 @media (max-width: 1200px) {
   .menu li {
     margin-left: 15px;
@@ -415,11 +421,11 @@ lightbox .close {
     margin-top: 10px;
     margin-right: 0;
     position: static;
-    order: 2; /* Move para baixo dos ícones sociais */
+    order: 2;
   }
 
   .social-links {
-    order: 1; /* Move os ícones sociais para cima */
+    order: 1;
     margin-bottom: 10px;
   }
 }
@@ -467,11 +473,11 @@ lightbox .close {
     margin-top: 10px;
     margin-right: 0;
     position: static;
-    order: 2; /* Move para baixo dos ícones sociais */
+    order: 2;
   }
 
   .social-links {
-    order: 1; /* Move os ícones sociais para cima */
+    order: 1;
     margin-bottom: 10px;
   }
 }
