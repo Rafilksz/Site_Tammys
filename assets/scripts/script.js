@@ -12,6 +12,7 @@ function openLightbox(index) {
   document.getElementById("lightbox").style.display = "flex";
   document.addEventListener("keydown", keyboardNavigation);
   addTouchListeners();
+  disableScroll();
 }
 
 function closeLightbox(event) {
@@ -19,6 +20,7 @@ function closeLightbox(event) {
     document.getElementById("lightbox").style.display = "none";
     document.removeEventListener("keydown", keyboardNavigation);
     removeTouchListeners();
+    enableScroll();
   }
 }
 
@@ -85,6 +87,15 @@ function handleTouchMove(evt) {
 
   xDown = null;
   yDown = null;
+  evt.preventDefault();  // Prevents scrolling the background page
+}
+
+function disableScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+function enableScroll() {
+  document.body.style.overflow = 'auto';
 }
 
 // EmailJS initialization
