@@ -1,12 +1,10 @@
 var currentImageIndex = 0;
-var images = [
-  "/assets/img/album_1.png",
-  "/assets/img/album_2.png",
-  "/assets/img/album_3.png",
-  "/assets/img/album_4.png",
-  "/assets/img/album_5.png",
-  "/assets/img/album_6.png"
-];
+var images = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+  var imageElements = document.querySelectorAll('.images-main-container img');
+  images = Array.from(imageElements).map(img => img.src);
+});
 
 function openLightbox(index) {
   currentImageIndex = index;
@@ -23,24 +21,20 @@ function closeLightbox(event) {
 }
 
 function changeImage(direction) {
-  currentImageIndex += direction;
-  if (currentImageIndex < 0) {
-    currentImageIndex = images.length - 1;
-  } else if (currentImageIndex >= images.length) {
-    currentImageIndex = 0;
-  }
+  currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
   document.getElementById("lightbox-img").src = images[currentImageIndex];
 }
 
 function keyboardNavigation(event) {
-  if (event.key === "ArrowLeft") {
-    changeImage(-1);
-  } else if (event.key === "ArrowRight") {
+  if (event.key === "ArrowRight") {
     changeImage(1);
+  } else if (event.key === "ArrowLeft") {
+    changeImage(-1);
   } else if (event.key === "Escape") {
-    closeLightbox({target: document.getElementById("lightbox")});
+    closeLightbox(event);
   }
 }
+
 
 // EmailJS initialization
 (function() {

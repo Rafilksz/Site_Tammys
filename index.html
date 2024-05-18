@@ -13,20 +13,20 @@
   <header>
     <img src="/assets/img/cabecario.png" alt="cabecalho">
   </header>
-  
+
   <div class="logo-container">
-    <img src="/assets/img/logo.png" alt="Logo">
+    <img src="/assets/img/logo.png" alt="Logo" class="logo">
     <nav>
       <ul class="menu">
         <li><a href="/index.html">Work</a></li>
         <li><a href="/pages/encontact.html">Contact</a></li>
         <li><a href="/pages/enabout.html">About</a></li>
         <li class="dropdown">
-            <select id="language-select" onchange="changeLanguage(this) ">
-              <option value="" disabled selected>Language</option>
-              <option value="pt-br">PT</option>
-              <option value="en-us">EN</option>
-            </select>
+          <select id="language-select" onchange="changeLanguage(this)">
+            <option value="" disabled selected>Language</option>
+            <option value="pt-br">PT</option>
+            <option value="en-us">EN</option>
+          </select>
         </li>
       </ul>
     </nav>
@@ -65,23 +65,28 @@
     </div>
   </main>
 
-
-  <footer style="background-image: url('assets/img/rodape.png');">
-    <div class="social-links">
-      <a href="https://www.behance.com" target="_blank">
-        <img src="assets/img/beha-nobg.png" alt="Behance"> 
-      </a>
-      <a href="https://www.facebook.com" target="_blank">
-        <img src="assets/img/face-nobg.png" alt="Facebook"> 
-      </a>
-      <a href="https://www.instagram.com" target="_blank">
-        <img src="assets/img/insta-nobg.png" alt="Instagram"> 
-      </a>
-      <a href="mailto:rafael.longas@gmail.com">
-        <img src="assets/img/mail-nobg.png" alt="Email">
-      </a>
+  <footer style="background-image: url('/assets/img/rodape.png');">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.behance.com" target="_blank">
+          <img src="/assets/img/beha-nobg.png" alt="Behance">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="/assets/img/face-nobg.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="/assets/img/insta-nobg.png" alt="Instagram">
+        </a>
+        <a href="mailto:rafael.longas@gmail.com">
+          <img src="/assets/img/mail-nobg.png" alt="Email">
+        </a>
+      </div>
+      <span class="footer-credit">
+        <a href="https://github.com/Rafilksz" target="_blank">Made by: Rafael Longas</a>
+      </span>
     </div>
   </footer>
+
 </body>
 
 </html>
