@@ -161,3 +161,43 @@ window.onload = function() {
     changeLanguage(languageSelect);
   });
 };
+
+
+
+
+
+(function() {
+  emailjs.init("SVYVSV7ExW5X8z7d0"); // Substitua pelo seu Public Key (User ID)
+})();
+
+function sendEmail() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  var templateParams = {
+    from_name: name,
+    from_email: email,
+    to_name: 'Thaisa Mayara',
+    reply_to: email,
+    message: message
+  };
+
+  emailjs.send('service_xlqfssq', 'template_4q68rd9', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Message sent successfully!');
+      resetForm();
+    }, function(error) {
+      console.log('FAILED...', error);
+      alert('An error occurred while sending the message.');
+    });
+}
+
+function resetForm() {
+  document.getElementById("name").value = '';
+  document.getElementById("email").value = '';
+  document.getElementById("message").value = '';
+}
+
+
