@@ -8,7 +8,7 @@ def convert_png_to_webp(src_folder, dest_folder):
     
     # Itera sobre todos os arquivos na pasta de origem
     for filename in os.listdir(src_folder):
-        if filename.endswith(".webp"):
+        if filename.endswith(".png"):
             # Caminho completo do arquivo de origem
             img_path = os.path.join(src_folder, filename)
             
@@ -23,8 +23,8 @@ def convert_png_to_webp(src_folder, dest_folder):
                 print(f'Convertido: {filename} -> {base_name}.webp')
 
 # Diretórios de origem e destino
-src_folder = r"C:\Users\lon90018\Documents\Site_Tammys\assets\lib\Album_6"
-dest_folder = r"C:\Users\lon90018\Documents\Site_Tammys\assets\lib\Album_6\webp"
+src_folder = r"c:\Users\Thaisa\Documents\Site_Tammys\assets\lib\Album_1"
+dest_folder = r"c:\Users\Thaisa\Documents\Site_Tammys\assets\lib\Album_1\webp"
 
 # Chama a função para converter as imagens
 convert_png_to_webp(src_folder, dest_folder)

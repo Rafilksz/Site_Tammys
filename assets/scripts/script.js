@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function openLightbox(index) {
   currentImageIndex = index;
-  document.getElementById("lightbox-img").src = images[index];
+  var src = images[index];
+  src = src.replace('/webp/', '/').replace('.webp', '.png');
+  document.getElementById("lightbox-img").src = src;
   document.getElementById("lightbox").style.display = "flex";
   document.addEventListener("keydown", keyboardNavigation);
   addTouchListeners();
@@ -29,7 +31,9 @@ function closeLightbox(event) {
 
 function changeImage(direction) {
   currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-  document.getElementById("lightbox-img").src = images[currentImageIndex];
+  var src = images[currentImageIndex];
+  src = src.replace('/webp/', '/').replace('.webp', '.png');
+  document.getElementById("lightbox-img").src = src;
 }
 
 function keyboardNavigation(event) {
@@ -162,10 +166,6 @@ window.onload = function() {
   });
 };
 
-
-
-
-
 (function() {
   emailjs.init("SVYVSV7ExW5X8z7d0"); // Substitua pelo seu Public Key (User ID)
 })();
@@ -199,5 +199,3 @@ function resetForm() {
   document.getElementById("email").value = '';
   document.getElementById("message").value = '';
 }
-
-

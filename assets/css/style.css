@@ -1,3 +1,4 @@
+/* Geral */
 body {
   margin: 0;
   padding: 0;
@@ -25,16 +26,9 @@ header img {
 
 .logo {
   width: 100%;
-  max-width: 300px;
+  max-width: 65%;
   height: auto;
   margin-bottom: 20px;
-}
-
-@media (min-width: 769px) {
-  .logo {
-    max-width: none;
-    width: auto;
-  }
 }
 
 footer {
@@ -141,20 +135,19 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
   padding: 20px;
 }
 
 .album-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 5%;
+  align-items: center;
+  width: 90%;
+  height: 90%;
 }
 
 .album-row a {
-  flex: 0 0 22%;
-  max-width: 22%;
+  flex: 0 0 22%; /* <---- mude a largura aqui */
+  max-width: 22%; /* <---- mude a largura aqui */
   margin-bottom: 10px;
 }
 
@@ -284,18 +277,16 @@ main {
 .image-row1 {
   display: flex;
   justify-content: center;
-  gap: 10%;
-  margin-bottom: 5%;
+  gap: 1%;
 }
 
 .image-row1 img {
   width: 100%;
-  max-width: 350px;
+  max-width: 600px;
   height: auto;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.2s;
-  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
 }
 
 .image-row1 img:hover {
@@ -340,6 +331,7 @@ main {
 .album-link {
   position: relative;
   display: block;
+  border-style: dashed;
 }
 
 .album-link .overlay {
@@ -364,19 +356,90 @@ main {
   font-size: 50px;
 }
 
-/* Media Queries */
-@media (max-width: 1200px) {
+/* _________ */
+
+/* Media Queries para Desktop (min-width: 1200px) */
+@media (min-width: 1200px) {
   .menu li {
     margin-left: 15px;
   }
 
+  .album-row {
+    justify-content: space-between; /* Ajusta o espaçamento entre os itens da linha */
+    gap: 0; /* Remove espaçamento entre as imagens */
+  }
+
+  .album-row a {
+    flex: 0 0 50%; /* <---- mude a largura aqui */
+    max-width: 50%; /* <---- mude a largura aqui */
+  }
+
+  .album-row img {
+    width: 100%; /* Garante que a imagem ocupe 100% do contêiner */
+    height: 100%;
+
+  }
+
+  .contact-form input, .contact-form textarea {
+    max-width: 600px;
+    width: 600px; /* Define uma largura fixa de 600px */
+  }
+
+  .contact-form textarea {
+    height: 300px; /* Define a altura original */
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    top: 50%;
+    transform: translateY(-50%);
+    left: unset;
+  }
+
+  .lightbox .prev {
+    left: 10px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  .lightbox .next {
+    right: 10px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+/* _________ */
+
+/* Media Queries para Tablet (min-width: 821px) e (max-width: 1200px) */
+@media (min-width: 821px) and (max-width: 1200px) {
   .album-row img {
     width: 250px;
     height: auto;
   }
+
+  .album-row a {
+    flex: 0 0 22%; /* Define a largura dos álbuns como 22% */
+    max-width: 22%; /* Garante que a largura máxima seja 22% */
+  }
+
+  .album-row img {
+    max-height: 250px; /* Define a altura máxima da imagem */
+  }
+
+  .image-row1 img {
+    max-width: 200px; /* Reduz o tamanho das imagens para caber no tablet */
+    margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
+  }
+
+  .image-row1 {
+    gap: 5px; /* Reduz o espaçamento entre as imagens na linha */
+    margin-bottom: 10px; /* Reduz o espaçamento entre as linhas */
+  }
 }
 
-@media (max-width: 768px) {
+/* _________ */
+
+/* Media Queries para Celular (max-width: 820px) */
+@media (max-width: 820px) {
   .menu {
     flex-direction: row;
     flex-wrap: wrap;
@@ -438,13 +501,6 @@ main {
   .lightbox .next {
     bottom: 10px;
     transform: translateX(-50%) rotate(90deg);
-  }
-}
-
-@media (max-width: 480px) {
-  .album-row a {
-    flex: 0 0 45%;
-    margin-bottom: 10px;
   }
 
   .album-main-container {
@@ -531,45 +587,9 @@ main {
   }
 }
 
-/* Media Query para computadores */
-@media (min-width: 769px) {
-  .contact-form input, .contact-form textarea {
-    max-width: 600px;
-    width: 600px; /* Define uma largura fixa de 600px */
-  }
+/* _________ */
 
-  .contact-form textarea {
-    height: 300px; /* Define a altura original */
-  }
-
-  .lightbox .prev,
-  .lightbox .next {
-    top: 50%;
-    transform: translateY(-50%);
-    left: unset;
-  }
-
-  .lightbox .prev {
-    left: 10px;
-    transform: translateY(-50%) rotate(0deg);
-  }
-
-  .lightbox .next {
-    right: 10px;
-    transform: translateY(-50%) rotate(0deg);
-  }
-
-  .album-row a {
-    flex: 0 0 33%; /* Aumenta a largura das imagens em 1.5x */
-    max-width: 33%;
-  }
-
-  .album-row img {
-    max-height: 375px; /* Aumenta a altura máxima das imagens em 1.5x */
-  }
-}
-
-/* Media Query para dispositivos móveis na página Sobre Mim */
+/* Media Queries para dispositivos móveis na página Sobre Mim */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -578,27 +598,5 @@ main {
 
   .left-box, .right-box {
     width: 90%;
-  }
-}
-
-/* Media Query para tablets */
-@media (min-width: 481px) and (max-width: 834px) {
-  .album-row a {
-    flex: 0 0 22%; /* Reverte o tamanho das imagens para tablets */
-    max-width: 22%;
-  }
-
-  .album-row img {
-    max-height: 250px; /* Reverte a altura máxima das imagens para tablets */
-  }
-
-  .image-row1 img {
-    max-width: 200px; /* Reduz o tamanho das imagens para caber no tablet */
-    margin-bottom: 10px; /* Adiciona margem inferior para espaçamento */
-  }
-
-  .image-row1 {
-    gap: 5px; /* Reduz o espaçamento entre as imagens na linha */
-    margin-bottom: 10px; /* Reduz o espaçamento entre as linhas */
   }
 }
