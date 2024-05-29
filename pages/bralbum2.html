@@ -33,24 +33,43 @@
   <main>
     <div class="images-main-container">
       <h1>Album 2</h1>
+      
       <div class="image-row1">
         <img src="/assets/lib/Album_2/webp/a2f1.webp" alt="Album 1" onclick="openLightbox(0)">
+      </div>
+
+      <div class="image-row1">        
+        <img src="/assets/lib/Album_2/webp/a2f3.webp" alt="Album 2" onclick="openLightbox(1)">
+      </div>
+
+      <div class="image-row1">        
         <img src="/assets/lib/Album_2/webp/a2f2.webp" alt="Album 2" onclick="openLightbox(1)">
-        <img src="/assets/lib/Album_2/webp/a2f3.webp" alt="Album 3" onclick="openLightbox(2)">
+      </div>
+      
+      <div class="image-row1">
+        <img src="/assets/lib/Album_2/webp/a2f6.webp" alt="Album 4" onclick="openLightbox(3)">
+        <img src="/assets/lib/Album_2/webp/a2f4.webp" alt="Album 5" onclick="openLightbox(4)">
       </div>
       <div class="image-row1">
-        <img src="/assets/lib/Album_2/webp/a2f4.webp" alt="Album 4" onclick="openLightbox(3)">
-        <img src="/assets/lib/Album_2/webp/a2f5.webp" alt="Album 5" onclick="openLightbox(4)">
-        <img src="/assets/lib/Album_2/webp/a2f6.webp" alt="Album 6" onclick="openLightbox(5)">
+        <img src="/assets/lib/Album_2/webp/a2f5.webp" alt="Album 6" onclick="openLightbox(5)">
+        <img src="/assets/lib/Album_2/webp/a2f7.webp" alt="Album 7" onclick="openLightbox(6)">
       </div>
-    </div>
 
-    <div id="lightbox" class="lightbox">
-      <span class="close" onclick="closeLightbox()">&times;</span>
-      <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-img" src="">
-      <span class="next" onclick="changeImage(1)">&#10095;</span>
-    </div>
+      <div class="image-row1">
+        <img src="/assets/lib/Album_2/webp/a2f8.webp" alt="Album 8" onclick="openLightbox(7)">
+      </div>
+
+      <div class="image-row1">
+        <img src="/assets/lib/Album_2/webp/a2f9.webp" alt="Album 9" onclick="openLightbox(8)">
+      </div>
+
+      <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close" onclick="closeLightbox(event)">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-img" src="">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+      </div>
+  </div>
   </main>
   
   <footer>
